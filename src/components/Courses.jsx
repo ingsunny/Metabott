@@ -140,7 +140,7 @@ const Courses = () => {
                   </div>
                 </div>
 
-                <Link to="/courses/backend">
+                <Link to="/courses/jsreact">
                   <button className="w-full bg-[#5c0601] hover:bg-[#660803] text-white rounded-lg py-2 text-sm font-semibold transition cursor-pointer">
                     Enroll Now
                   </button>
@@ -201,9 +201,11 @@ const Courses = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-[#5c0601] hover:bg-[#660803] text-white rounded-lg py-2 text-sm font-semibold transition cursor-pointer">
-                  Enroll Now
-                </button>
+                <Link to="/courses/backend">
+                  <button className="w-full bg-[#5c0601] hover:bg-[#660803] text-white rounded-lg py-2 text-sm font-semibold transition cursor-pointer">
+                    Enroll Now
+                  </button>
+                </Link>
               </div>
             </TiltCard>
           </div>

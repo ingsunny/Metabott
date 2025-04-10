@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import courseData from "../data/courseData";
 
 const Navbar = () => {
   // Toggle Menu - Responsive
@@ -57,31 +59,63 @@ const Navbar = () => {
     };
   }, [lastScrollTop]);
 
+  // modal
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+  const modalRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal(); // your modal close function
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isModalOpen]);
+
   return (
     <>
       <nav
         className={`bg-white z-50 fixed w-full transition-all duration-300 ease-in-out top-0 h-[78px] xl:h-fit shadow-sm ${
-          isOpen ? "" : isFixed ? "opacity-0" : "opacity-100"
-        }`}
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : isFixed
+            ? "opacity-0 pointer-events-none"
+            : "opacity-100"
+        }
+  `}
       >
         <div className=" mx-auto flex justify-between items-center px-5 py-4 xl:py-0">
           <div className="flex items-center cursor-pointer">
-            <a href="/">
+            <Link to="/">
               <img className="w-[160px] sm:w-[230px]" src="/logo.jpg" />
-            </a>
+            </Link>
           </div>
           <div className="hidden xl:flex gap-1 md:items-center text-base">
-            <a className="px-5 font-semibold hover:text-[#5c0601] py-7 cursor-pointer">
+            <Link
+              to="/"
+              className="px-5 font-semibold hover:text-[#5c0601] py-7 cursor-pointer"
+            >
               Home
-            </a>
+            </Link>
             <div
               className="px-5 flex items-center hover:text-[#5c0601] py-7 relative"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <a className="font-semibold cursor-default">
+              <span className="font-semibold cursor-default">
                 Courses&nbsp;&nbsp;
-              </a>
+              </span>
               <svg
                 className="fill-site-neutrals-800 w-4 h-4 "
                 viewBox="0 0 24 24"
@@ -98,208 +132,16 @@ const Navbar = () => {
                   }`}
                 >
                   <div className="grid grid-cols-1 gap-2 border-t border-b">
-                    <div className="bg-white hover:bg-[#5c0601] hover:text-white cursor-pointer p-4 border-b border-gray-200">
-                      Frontend Development Mastery
-                    </div>
-                    <div className="bg-white hover:bg-[#5c0601] hover:text-white cursor-pointer p-4 border-b border-gray-200">
-                      JavaScript + React Specialization
-                    </div>
-                    <div className="bg-white hover:bg-[#5c0601] hover:text-white cursor-pointer p-4 border-b border-gray-200">
-                      Backend Development with Node.js
-                    </div>
-                    <div className="bg-white hover:bg-[#5c0601] hover:text-white cursor-pointer p-4">
-                      Full Stack Integration + DevOps Basics
-                    </div>
-                  </div>
-
-                  {/* <div className="flex gap-3 border-b-2 py-4 mb-5 border-gray-300/85 ">
-                  <span>
-                    <svg
-                      width="32"
-                      height="28"
-                      viewBox="0 0 32 28"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M17.8108 0.20166C25.4704 0.20166 31.6799 6.41113 31.6799 14.0708C31.6799 21.7304 25.4704 27.9399 17.8108 27.9399V0.20166Z"
-                        fill="#F66135"
-                      ></path>
-                      <path
-                        d="M7.99445 0C15.3286 2.20855 19.4849 9.94218 17.2763 17.2763C15.0696 24.6104 7.3341 28.7667 0 26.5581L7.99445 0Z"
-                        fill="#F66135"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span>
-                    <h1 className="text-xl font-semibold text-gray-900 hover:underline">
-                      <a href="/software-development-services">
-                        Software Development Services.
-                      </a>
-                    </h1>
-                    <p className="text-md text-gray-900/95">
-                      Accelerate your tech projects with outsourced development.
-                      Flexible engagement models,
-                      <br /> tailored to you.
-                    </p>
-                  </span>
-                </div> */}
-                  {/* <div className="flex  justify-between pr-3">
-                  <div>
-                    <span>
-                      <h2 className="text-xl font-semibold text-gray-900/95">
-                        Top noch services.
-                      </h2>
-                      <p className="text-gray-900">
-                        You can hire our software developers in different <br />{" "}
-                        ways
-                      </p>
-                    </span>
-                    <div className="mt-2">
-                      <div className="flex gap-2 py-3">
-                        <svg
-                          width="26"
-                          height="26"
-                          viewBox="0 0 26 26"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16.6567 8.84829L15.5609 3L0 5.8663L2.8903 21.2981L8.50211 20.2643L8.27749 24.0856L24.0779 25L25 9.33072L16.6567 8.84829Z"
-                            fill="#F66135"
-                          ></path>
-                          <path
-                            d="M9.08057 8.52795L25.3987 9.42126L24.5054 25.7393L8.18726 24.846L9.08057 8.52795Z"
-                            fill="#FBB39E"
-                          ></path>
-                        </svg>
-                        <span>
-                          <h3 className="text-md font-bold text-gray-900/95">
-                            Custom Web Development
-                          </h3>
-                          <p className="text-sm text-gray-900">
-                            Our software developers in your team.
-                          </p>
-                        </span>
-                      </div>
-                      <div className="flex gap-2 py-3">
-                        <svg
-                          width="26"
-                          height="26"
-                          viewBox="0 0 26 26"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16.6567 8.84829L15.5609 3L0 5.8663L2.8903 21.2981L8.50211 20.2643L8.27749 24.0856L24.0779 25L25 9.33072L16.6567 8.84829Z"
-                            fill="#F66135"
-                          ></path>
-                          <path
-                            d="M9.08057 8.52795L25.3987 9.42126L24.5054 25.7393L8.18726 24.846L9.08057 8.52795Z"
-                            fill="#FBB39E"
-                          ></path>
-                        </svg>
-                        <span>
-                          <h3 className="text-md font-bold">
-                            Custom App Development
-                          </h3>
-                          <p className="text-sm">
-                            Our software developers in your team.
-                          </p>
-                        </span>
-                      </div>
-                      <div className="flex gap-2 py-3">
-                        <svg
-                          width="26"
-                          height="26"
-                          viewBox="0 0 26 26"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16.6567 8.84829L15.5609 3L0 5.8663L2.8903 21.2981L8.50211 20.2643L8.27749 24.0856L24.0779 25L25 9.33072L16.6567 8.84829Z"
-                            fill="#F66135"
-                          ></path>
-                          <path
-                            d="M9.08057 8.52795L25.3987 9.42126L24.5054 25.7393L8.18726 24.846L9.08057 8.52795Z"
-                            fill="#FBB39E"
-                          ></path>
-                        </svg>
-                        <span>
-                          <h3 className="text-md font-bold">
-                            Personalized Cloud Hosting
-                          </h3>
-                          <p className="text-sm">
-                            Our software developers in your team.
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900/95 mb-6">
-                      Technologies.
-                    </h2>
-                    <span>
-                      <ul className="flex flex-col gap-2 mb-3">
-                        <li className="hover:underline cursor-pointer ">
-                          React
-                        </li>
-                        <li className="hover:underline cursor-pointer ">
-                          Next
-                        </li>
-                        <li className="hover:underline cursor-pointer ">
-                          Tailwind
-                        </li>
-                        <li className="hover:underline cursor-pointer ">
-                          Javascript
-                        </li>
-                        <li className="hover:underline cursor-pointer ">PHP</li>
-                        <li className="hover:underline cursor-pointer ">
-                          React
-                        </li>
-                        <li className="hover:underline cursor-pointer ">
-                          Next
-                        </li>
-                        <li className="hover:underline cursor-pointer ">
-                          Tailwind
-                        </li>
-                        <li className="hover:underline cursor-pointer ">
-                          Javascript
-                        </li>
-                        <li className="hover:underline cursor-pointer ">PHP</li>
-                      </ul>
-                      <a
-                        href="/technologies"
-                        className="hover:underline text-md text-gray-400"
+                    {Object.entries(courseData).map(([key, item], index) => (
+                      <Link
+                        to={`/courses/${key}`}
+                        key={index}
+                        className="bg-white hover:bg-[#5c0601] hover:text-white cursor-pointer p-4 border-b border-gray-200"
                       >
-                        All technologies
-                      </a>
-                    </span>
+                        {item.title}
+                      </Link>
+                    ))}
                   </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900/95 mb-6">
-                      Solutions.
-                    </h2>
-                    <span>
-                      <ul className="flex flex-col gap-2 mb-3">
-                        <li>QA Testing Automation</li>
-                        <li>Next</li>
-                        <li>Tailwind</li>
-                        <li>Android App Development</li>
-                        <li>PHP</li>
-                        <li>React</li>
-                        <li>Javascript</li>
-                        <li>Tailwind</li>
-                        <li>Javascript</li>
-                        <li>PHP</li>
-                      </ul>
-                      <a href="/solutions" className=" text-md text-gray-400">
-                        All solutions
-                      </a>
-                    </span>
-                  </div>
-                </div> */}
                 </div>
               )}
             </div>
@@ -321,7 +163,7 @@ const Navbar = () => {
             </a>
           </div>
           <a
-            href="/basic-detail"
+            onClick={openModal}
             className="hidden xl:block rounded-md py-[0.6rem] px-[1rem] text-sm font-medium text-center text-white bg-[#5c0601] hover:bg-[#660803]"
           >
             Request a Call
@@ -365,35 +207,75 @@ const Navbar = () => {
         >
           <ul className="text-lg h-full overflow-y-auto flex flex-col bg-gray-100 gap-4">
             <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a className="font-medium" href="/">
+              <a href="/" className="font-medium">
                 Home
               </a>
             </li>
             <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a className="font-medium" href="/about">
+              <a className="font-medium" href="/">
                 Courses
               </a>
             </li>
             <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a className="font-medium" href="/clients">
+              <a href="/" className="font-medium">
                 Downloads
               </a>
             </li>
             <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a className="font-medium" href="/blogs">
+              <a className="font-medium" href="/">
                 Contact Us
               </a>
             </li>
             <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer ">
-              <a className="font-medium" href="/basic-detail">
-                Schedule a Call
-              </a>
+              <span onClick={openModal} className="font-medium">
+                Request a Call
+              </span>
             </li>
           </ul>
         </div>
         {/* </> */}
         {/* )} */}
       </nav>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 backdrop-blur-sm bg-black/70 flex items-center justify-center z-50">
+          <div
+            ref={modalRef}
+            className="bg-white/70 p-6 rounded-lg shadow-lg w-[90%] max-w-md"
+          >
+            <h2 className="text-xl font-semibold mb-4">Request a Call</h2>
+            <form className="flex flex-col gap-3">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="border p-2 rounded outline-none"
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="border p-2 rounded outline-none"
+              />
+              <textarea
+                placeholder="Message (optional)"
+                className="border p-2 rounded outline-none"
+              />
+              <button
+                type="submit"
+                className="bg-[#5c0601] hover:bg-[#660803] text-white py-2 px-4 rounded"
+              >
+                Submit
+              </button>
+            </form>
+            {/* <button
+              onClick={closeModal}
+              className="mt-4 text-sm text-gray-500 hover:text-black"
+            >
+              Close
+            </button> */}
+          </div>
+        </div>
+      )}
     </>
   );
 };

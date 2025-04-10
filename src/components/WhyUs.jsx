@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WhyUs = () => {
   return (
@@ -625,8 +626,8 @@ const WhyUs = () => {
                   into a confident developer ready to take on full stack
                   challenges.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/get-started"
                   className="inline-flex items-center justify-center py-3 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-[#5c0601] hover:bg-opacity-90"
                 >
                   Get Started
@@ -642,7 +643,7 @@ const WhyUs = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

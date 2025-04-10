@@ -9,6 +9,10 @@ body {
   /* border: 1px solid red; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .swiper {
   width: 100%;
   padding-top: 50px;

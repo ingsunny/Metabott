@@ -141,7 +141,10 @@ const Home = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
         </div>
 
-        <div className="absolute top-16/12 lg:top-12/12 xl:top-10/12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-[#1f2937] p-6 md:p-8 rounded-lg shadow-lg w-[95%] max-w-xl">
+        <div
+          id="ReqForm"
+          className="absolute top-16/12 lg:top-12/12 xl:top-10/12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-[#1f2937] p-6 md:p-8 rounded-lg shadow-lg w-[95%] max-w-xl"
+        >
           <form action="#" class="space-y-5 lg:space-y-8">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="w-full">

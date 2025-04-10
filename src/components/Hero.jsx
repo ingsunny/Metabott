@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -16,8 +17,8 @@ const Hero = () => {
               trusted by +1500 students and professionals to build real skills
               and real careers.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/get-started"
               class="inline-flex w-fit items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-[#5c0601] hover:bg-[#660803]  rounded-lg"
             >
               Get started
@@ -33,7 +34,7 @@ const Hero = () => {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
           <div class="lg:mt-0 lg:col-span-5 order-1 lg:order-2 ">
             <div class="rounded-tl-4xl rounded-br-4xl overflow-hidden">
