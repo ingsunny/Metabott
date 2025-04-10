@@ -254,14 +254,13 @@ const Navbar = () => {
             {openCourses && (
               <ul className="ml-6 mt-1 space-y-2 border-l border-gray-300 pl-4">
                 {courseLinks.map((course, index) => (
-                  <li key={index}>
-                    <a
-                      href={course.path}
-                      className="block text-gray-700 hover:text-[#5c0601] transition-all duration-300"
-                    >
-                      {course.name}
-                    </a>
-                  </li>
+                  <Link to={`${course.path}/`}>
+                    <li key={index}>
+                      <span className="block text-gray-700 hover:text-[#5c0601] transition-all duration-300">
+                        {course.name}
+                      </span>
+                    </li>
+                  </Link>
                 ))}
               </ul>
             )}
