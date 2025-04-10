@@ -19,7 +19,7 @@ const ChatBotWidget = () => {
       </div>
 
       {isOpen && (
-        <div className="fixed bottom-20 right-6 w-[350px] h-[470px] z-50 shadow-xl border border-gray-300 rounded-xl overflow-hidden bg-white">
+        <div className="fixed bottom-20 right-0 w-[350px] h-[470px] z-50 shadow-xl border border-gray-300 rounded-xl overflow-hidden bg-white">
           <iframe
             src="https://www.chatbase.co/chatbot-iframe/q6ev75eburH4Xu7b50O93"
             width="100%"
