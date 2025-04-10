@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import courseData from "../data/courseData";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const Navbar = () => {
   // Toggle Menu - Responsive
@@ -83,10 +84,21 @@ const Navbar = () => {
     };
   }, [isModalOpen]);
 
+  // mobile menu #
+
+  const [openCourses, setOpenCourses] = useState(false);
+
+  const courseLinks = [
+    { name: "Frontend Development", path: "/courses/frontend" },
+    { name: "Backend with Node.js", path: "/courses/backend" },
+    { name: "Full Stack Pro", path: "/courses/fullstack" },
+    { name: "JS + React Specialization", path: "/courses/jsreact" },
+  ];
+
   return (
     <>
       <nav
-        className={`bg-white z-50 fixed w-full transition-all duration-300 ease-in-out top-0 h-[78px] xl:h-fit shadow-sm ${
+        className={`bg-white z-50 fixed w-full transition-all duration-300 ease-in-out top-0 h-[73px] md:h-[83px] xl:h-fit shadow-sm ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : isFixed
@@ -152,14 +164,11 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <a
-              href="/downloads"
-              className="px-5 font-semibold hover:text-[#5c0601] py-7"
-            >
+            <a className="px-5 font-semibold hover:text-[#5c0601] py-7">
               Downloads
             </a>
             <a
-              href="/about"
+              href="/about-us"
               className="px-5 font-semibold hover:text-[#5c0601] py-7 cursor-pointer"
             >
               About Us
@@ -210,29 +219,78 @@ const Navbar = () => {
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <ul className="text-lg h-full overflow-y-auto flex flex-col bg-gray-100 gap-4">
-            <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a href="/" className="font-medium">
-                Home
-              </a>
-            </li>
-            <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a className="font-medium" href="/">
+          <ul className="text-lg h-full overflow-y-auto flex flex-col bg-gray-100 py-4 px-2 gap-1">
+            {/* Home */}
+            <Link to="/">
+              <li className="group px-4 py-3 cursor-pointer border-b hover:bg-[#5c0601] transition-all rounded-md">
+                <span className="font-medium text-gray-800 group-hover:text-white transition-all duration-300">
+                  Home
+                </span>
+              </li>
+            </Link>
+
+            {/* Courses with toggle */}
+            <li
+              onClick={() => setOpenCourses(!openCourses)}
+              className="group px-4 py-3 cursor-pointer flex justify-between items-center border-b hover:bg-[#5c0601] transition-all rounded-md"
+            >
+              <span className="font-medium text-gray-800 group-hover:text-white transition-all duration-300">
                 Courses
-              </a>
+              </span>
+              {openCourses ? (
+                <ChevronUp
+                  size={18}
+                  className="text-gray-600 group-hover:text-white transition-all"
+                />
+              ) : (
+                <ChevronDown
+                  size={18}
+                  className="text-gray-600 group-hover:text-white transition-all"
+                />
+              )}
             </li>
-            <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a href="/" className="font-medium">
+
+            {/* Submenu */}
+            {openCourses && (
+              <ul className="ml-6 mt-1 space-y-2 border-l border-gray-300 pl-4">
+                {courseLinks.map((course, index) => (
+                  <li key={index}>
+                    <a
+                      href={course.path}
+                      className="block text-gray-700 hover:text-[#5c0601] transition-all duration-300"
+                    >
+                      {course.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* Downloads */}
+            <li className="group px-4 py-3 cursor-pointer border-b hover:bg-[#5c0601] transition-all rounded-md">
+              <span
+                className="font-medium text-gray-800 group-hover:text-white transition-all"
+                // href="/downloads"
+              >
                 Downloads
-              </a>
+              </span>
             </li>
-            <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer">
-              <a className="font-medium" href="/">
-                Contact Us
-              </a>
-            </li>
-            <li className=" hover:bg-[#5c0601] hover:text-white px-3 py-3 cursor-pointer ">
-              <span onClick={openModal} className="font-medium">
+
+            {/* About Us */}
+            <Link to="/about-us">
+              <li className="group px-4 py-3 cursor-pointer border-b hover:bg-[#5c0601] transition-all rounded-md">
+                <span className="font-medium text-gray-800 group-hover:text-white transition-all">
+                  About Us
+                </span>
+              </li>
+            </Link>
+
+            {/* Request a Call */}
+            <li
+              onClick={openModal}
+              className="group px-4 py-3 cursor-pointer border-b hover:bg-[#5c0601] transition-all rounded-md"
+            >
+              <span className="font-medium text-gray-800 group-hover:text-white transition-all">
                 Request a Call
               </span>
             </li>

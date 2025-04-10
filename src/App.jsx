@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import BookSlot from "./pages/BookSlot";
 // import ChatBase from "./components/Chatbase";
 import ChatBotWidget from "./components/Chatbase";
+import AboutUs from "./pages/AboutUs";
 
 const App = () => {
   // useEffect(() => {
@@ -39,6 +40,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/get-started" element={<BookSlot />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/courses/:courseId" element={<CourseDetails />} />
       </Routes>
     </BrowserRouter>

@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = ({ style }) => {
   return (
     <>
-      <footer class={`w-full ${style ? style : ""}`}>
+      <footer class={`w-full pb-10 xl:pb-20 ${style ? style : ""}`}>
         <div class="mx-auto">
-          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 lg:gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">
             <div class="col-span-full  lg:col-span-2 lg:mb-0">
-              <a href="/">
+              <Link to={"/"}>
                 <img className="w-[180px] sm:w-[230px]" src="/logo.jpg" />
-              </a>
+              </Link>
               <p class="py-8 text-sm text-gray-500 lg:max-w-xs lg:text-center lg:text-left">
                 Trusted in more than thousands of students. Have any query ?
               </p>
@@ -108,7 +109,7 @@ const Footer = ({ style }) => {
               </ul>
             </div>
             <div class="lg:mx-auto text-left ">
-              <h4 class="text-lg text-gray-900 font-medium mb-7">Subscribe</h4>
+              <h4 class="text-lg text-gray-500 font-medium mb-7">Subscribe</h4>
               <p class="text-sm text-gray-500 leading-6 mb-7">
                 Subscribe to get the latest news from us
               </p>

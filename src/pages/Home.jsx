@@ -126,13 +126,13 @@ const Home = () => {
 
       <section className="relative h-[100vh] w-full">
         <div
-          className="relative h-30/20 lg:h-13/12 xl:h-10/12 bg-red-500 bg-cover bg-fixed bg-center text-white flex flex-col items-center px-6 text-center"
+          className="relative h-12/12 sm:h-11/12 lg:h-13/12 xl:h-10/12 bg-red-500 bg-cover bg-fixed bg-center text-white flex flex-col items-center px-6 text-center"
           style={{
             backgroundImage:
               'url("https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
           }}
         >
-          <div className="z-10 absolute top-1/9 sm:top-1/6 lg:top-1/6 xl:top-1/4 text-center px-2">
+          <div className="z-10 absolute top-1/12 xs:top-1/8 sm:top-1/6 lg:top-1/6 xl:top-1/4 text-center px-2">
             {" "}
             <h2 className="text-4xl font-semibold mb-2 text-white">
               Enroll & Get Your Own Professional Website – Free!
@@ -150,7 +150,7 @@ const Home = () => {
 
         <div
           id="ReqForm"
-          className="absolute top-16/12 lg:top-12/12 xl:top-10/12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-[#1f2937] p-6 md:p-8 rounded-lg shadow-lg w-[95%] max-w-xl"
+          className="absolute top-11/12 sm:top-9/12 lg:top-12/12 xl:top-10/12 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-[#1f2937] p-6 md:p-8 rounded-lg shadow-lg w-[95%] max-w-xl"
         >
           <form action="#" class="space-y-5 lg:space-y-8">
             <div className="flex flex-col lg:flex-row gap-4">
