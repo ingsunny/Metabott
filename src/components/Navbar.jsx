@@ -167,12 +167,12 @@ const Navbar = () => {
             <a className="px-5 font-semibold hover:text-[#5c0601] py-7">
               Downloads
             </a>
-            <a
-              href="/about-us"
+            <Link
+              to="/about-us"
               className="px-5 font-semibold hover:text-[#5c0601] py-7 cursor-pointer"
             >
               About Us
-            </a>
+            </Link>
 
             <a className="px-5 font-semibold hover:text-[#5c0601] py-7 cursor-pointer">
               Career
