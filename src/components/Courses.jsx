@@ -33,7 +33,7 @@ const Courses = () => {
                 className="h-56 w-full object-cover rounded-t-xl"
               />
 
-              <div className="p-4">
+              <div className="p-2">
                 <div className="px-2 pt-1 pb-6">
                   <div className="flex items-center gap-2 py-1">
                     <h4 className="text-[13px] text-gray-600 font-medium">
@@ -48,7 +48,7 @@ const Courses = () => {
                   <h2 className="text-[1.2rem] pt-2 mb-3 font-semibold">
                     Frontend Web Development Mastery
                   </h2>
-                  <p className="text-gray-600 mb-3 text-sm">
+                  <p className="text-gray-600 text-base mb-3">
                     Learn HTML, CSS, JavaScript, and React with hands-on
                     projects.
                   </p>
@@ -69,9 +69,11 @@ const Courses = () => {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span>4.2</span>
+                      <span className="text-gray-600 text-base font-medium">
+                        4.2
+                      </span>
                     </span>
-                    <span className="text-[14px] border-l border-[#9a9a9a] pl-2 text-gray-600  font-medium">
+                    <span className="border-l border-[#9a9a9a] pl-2 font-medium text-gray-600 text-base">
                       250+ learners
                     </span>
                   </div>
@@ -109,7 +111,7 @@ const Courses = () => {
                   <h2 className="text-[1.2rem] pt-2 mb-3 font-semibold">
                     JavaScript + React Specialization
                   </h2>
-                  <p className="text-gray-600 mb-3 text-sm">
+                  <p className="text-gray-600 text-base mb-3">
                     Master core JavaScript concepts and build dynamic UIs with
                     React.
                   </p>
@@ -130,9 +132,9 @@ const Courses = () => {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span>4.3</span>
+                      <span className="text-gray-600 text-base">4.3</span>
                     </span>
-                    <span className="text-[14px] border-l border-[#9a9a9a] pl-2 text-gray-600  font-medium">
+                    <span className="border-l border-[#9a9a9a] pl-2 text-gray-600 text-base ">
                       180+ learners
                     </span>
                   </div>
@@ -170,9 +172,9 @@ const Courses = () => {
                   <h2 className="text-[1.2rem] pt-2 mb-3 font-semibold">
                     Backend Development with Node.js
                   </h2>
-                  <p className="text-gray-600 mb-3 text-sm">
-                    Learn RESTful APIs, databases, and manage servers using
-                    Node.js and Express.
+                  <p className="text-gray-600 text-base mb-3">
+                    Learn RESTful APIs, databases, and servers using Node.js and
+                    Express.
                   </p>
                   <div className="flex gap-2">
                     <span className="flex text-[14px] text-gray-600 font-medium items-center">
@@ -191,9 +193,9 @@ const Courses = () => {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span>4.1</span>
+                      <span className="text-gray-600 text-base">4.1</span>
                     </span>
-                    <span className="text-[14px] border-l border-[#9a9a9a] pl-2 text-gray-600  font-medium">
+                    <span className="text-gray-600 text-base border-l border-[#9a9a9a] pl-2">
                       200+ learners
                     </span>
                   </div>

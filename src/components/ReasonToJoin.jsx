@@ -3,7 +3,7 @@ import React from "react";
 const ReasonToJoin = () => {
   return (
     <>
-      <section class="px-4 space-y-6 bg-gray-100 py-8 md:py-12 lg:py-20">
+      <section class="px-4 space-y-6 bg-gray-100  pt-20 pb-20 lg:pt-20 lg:pb-28">
         <div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-[1.1] ">
             Top Reasons to Join
@@ -16,7 +16,7 @@ const ReasonToJoin = () => {
           </p>
         </div>
 
-        <div class="mx-auto grid justify-center gap-4 grid-cols-1 md:max-w-[64rem] md:grid-cols-2">
+        <div class="mx-auto grid justify-center gap-7 mg:gap-4 grid-cols-1 md:max-w-[64rem] md:grid-cols-2">
           <div className="w-full h-[200px] [perspective:1000px] group">
             <div
               className="relative w-full h-full transition-transform duration-1000 group-hover:[transform:rotateY(180deg)]"

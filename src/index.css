@@ -26,3 +26,11 @@ body {
   display: block;
   width: 100%;
 }
+
+/* flip card  */
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
