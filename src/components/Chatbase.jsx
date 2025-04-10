@@ -14,7 +14,7 @@ const ChatBotWidget = () => {
           onClick={toggleChat}
           className="bg-[#5c0601] text-white px-4 py-3 rounded-full shadow-lg hover:bg-[#7c0802] transition-all cursor-pointer"
         >
-          💬 Chat with us
+          💬 <span className="hidden sm:inline-block">Chat with us</span>
         </button>
       </div>
 

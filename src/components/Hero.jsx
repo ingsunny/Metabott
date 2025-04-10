@@ -19,7 +19,7 @@ const Hero = () => {
             </p>
             <Link
               to="/get-started"
-              class="inline-flex w-fit items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-[#5c0601] hover:bg-[#660803]  rounded-lg"
+              class="inline-flex w-fit scale-95 sm:scale-100 items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-[#5c0601] hover:bg-[#660803]  rounded-lg"
             >
               Get started
               <svg
