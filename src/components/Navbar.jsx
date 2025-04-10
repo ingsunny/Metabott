@@ -197,9 +197,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        {/* {isOpen && ( */}
-        {/* <> */}
-        {/* <hr /> */}
+
         <div
           className={`xl:hidden bg-white h-screen pb-7 border-t border-gray-400 transform transition-transform duration-500 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
@@ -233,8 +231,6 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {/* </> */}
-        {/* )} */}
       </nav>
 
       {/* Modal */}
@@ -267,12 +263,6 @@ const Navbar = () => {
                 Submit
               </button>
             </form>
-            {/* <button
-              onClick={closeModal}
-              className="mt-4 text-sm text-gray-500 hover:text-black"
-            >
-              Close
-            </button> */}
           </div>
         </div>
       )}

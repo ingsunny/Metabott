@@ -41,6 +41,13 @@ const Home = () => {
 
   return (
     <>
+      {/* <iframe
+        src="https://www.chatbase.co/chatbot-iframe/q6ev75eburH4Xu7b50O93"
+        width="100%"
+        style={{ height: "100%", minHeight: "700px" }}
+        frameBorder="0"
+      /> */}
+
       <Navbar />
       <Hero />
       <Courses />
