@@ -173,6 +173,13 @@ const Navbar = () => {
             >
               About Us
             </Link>
+            <Link to="/about-us">
+              <li className="group px-4 py-3 cursor-pointer border-b hover:bg-[#5c0601] transition-all rounded-md">
+                <span className="font-medium text-gray-800 group-hover:text-white transition-all">
+                  About Us
+                </span>
+              </li>
+            </Link>
 
             <a className="px-5 font-semibold hover:text-[#5c0601] py-7 cursor-pointer">
               Career
