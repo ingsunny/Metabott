@@ -33,7 +33,7 @@ const Courses = () => {
                 className="h-56 w-full object-cover rounded-t-xl"
               />
 
-              <div className="p-2">
+              <div className="p-4">
                 <div className="px-2 pt-1 pb-6">
                   <div className="flex items-center gap-2 py-1">
                     <h4 className="text-[13px] text-gray-600 font-medium">
@@ -134,7 +134,7 @@ const Courses = () => {
                       </svg>
                       <span className="text-gray-600 text-base">4.3</span>
                     </span>
-                    <span className="border-l border-[#9a9a9a] pl-2 text-gray-600 text-base ">
+                    <span className="border-l border-[#9a9a9a] pl-2 font-medium text-gray-600 text-base ">
                       180+ learners
                     </span>
                   </div>
@@ -195,7 +195,7 @@ const Courses = () => {
                       </svg>
                       <span className="text-gray-600 text-base">4.1</span>
                     </span>
-                    <span className="text-gray-600 text-base border-l border-[#9a9a9a] pl-2">
+                    <span className="text-gray-600 font-medium text-base border-l border-[#9a9a9a] pl-2">
                       200+ learners
                     </span>
                   </div>

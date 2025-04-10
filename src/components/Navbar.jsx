@@ -95,6 +95,13 @@ const Navbar = () => {
         }
   `}
       >
+        <div className="xl:block hidden bg-[#5c0601] text-white text-[0.78rem] py-2 flex justify-center items-center text-center">
+          Get A Free Website 😎 &nbsp;&nbsp;|&nbsp;&nbsp; Assured Placements
+          &nbsp;&nbsp;|&nbsp;&nbsp; Internship + Experience Letter
+          &nbsp;&nbsp;|&nbsp;&nbsp; Lifetime Support &nbsp;&nbsp;|&nbsp;&nbsp;
+          Hi-Tech Classroom
+        </div>
+
         <div className=" mx-auto flex justify-between items-center px-5 py-4 xl:py-0">
           <div className="flex items-center cursor-pointer">
             <Link to="/">
@@ -164,7 +171,7 @@ const Navbar = () => {
           </div>
           <a
             onClick={openModal}
-            className="hidden xl:block rounded-md py-[0.6rem] px-[1rem] text-sm font-medium text-center text-white bg-[#5c0601] hover:bg-[#660803]"
+            className="hidden xl:block cursor-pointer rounded-md py-[0.6rem] px-[1rem] text-sm font-medium text-center text-white bg-[#5c0601] hover:bg-[#660803]"
           >
             Request a Call
           </a>
